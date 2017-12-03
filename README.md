@@ -1,5 +1,7 @@
 ### hapi authentication plugin
 
+[![Build Status](https://travis-ci.org/puchesjr/hapi-now-auth.svg?branch=master)](https://travis-ci.org/puchesjr/hapi-now-auth)
+
 **Note:** this plugin is for [hapi](https://hapijs.com) v17+ 
 
 This authentication package was inspired by [hapi-auth-bearer-token](https://github.com/johnbrett/hapi-auth-bearer-token) and [hapi-auth-jwt2](https://www.npmjs.com/package/hapi-auth-jwt2)
@@ -114,3 +116,4 @@ async function start() {
 // Don't worry be hapi
 start();
 ```
+License MIT
