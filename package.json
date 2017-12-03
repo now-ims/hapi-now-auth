@@ -1,0 +1,30 @@
+{
+  "name": "hapi-now-jwt",
+  "version": "1.0.0",
+  "description": "hapi-17 jwt auth",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "lab -a code -t 99 -L",
+    "test-cover": "lab -a code -r html -o coverage.html"
+  },
+  "keywords": [
+    "hapi",
+    "jwt",
+    "auth",
+    "authentication",
+    "bearer",
+    "token"
+  ],
+  "author": "John Rodkey <jrodkeyjr@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "boom": "^7.1.1",
+    "hoek": "^5.0.2",
+    "jsonwebtoken": "^8.1.0"
+  },
+  "devDependencies": {
+    "code": "^5.1.2",
+    "hapi": "^17.1.1",
+    "lab": "^15.1.2"
+  }
+}
