@@ -1,5 +1,5 @@
 {
-  "name": "hapi-now-jwt",
+  "name": "@now-ims/hapi-now-jwt",
   "version": "1.0.0",
   "description": "Simple hapi v17+ authentication scheme including JWT",
   "repository": {
