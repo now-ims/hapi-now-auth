@@ -1,7 +1,11 @@
 {
   "name": "hapi-now-jwt",
   "version": "1.0.0",
-  "description": "hapi-17 jwt auth",
+  "description": "Simple hapi v17+ authentication scheme including JWT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/puchesjr/hapi-now-auth.git"
+  },
   "main": "lib/index.js",
   "scripts": {
     "test": "lab -a code -t 99 -L",
@@ -17,6 +21,9 @@
   ],
   "author": "John Rodkey <jrodkeyjr@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "dependencies": {
     "boom": "^7.1.1",
     "hoek": "^5.0.2",
@@ -26,5 +33,9 @@
     "code": "^5.1.2",
     "hapi": "^17.1.1",
     "lab": "^15.1.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/puchesjr/hapi-now-auth/issues"
+  },
+  "homepage": "https://github.com/puchesjr/hapi-now-auth"
 }
