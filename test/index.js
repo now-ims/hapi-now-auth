@@ -202,12 +202,23 @@ before(async () => {
         }
     });
 
+    server.auth.strategy('jwt_with_token_type', 'hapi-now-auth', {
+        validate: defaultJWTFunc,
+        verifyJWT: true,
+        tokenType: 'JWT',
+        keychain: ['nogood', 'badsecret', 'secret', 'anotherbadsecret'],
+        verifyOptions: {
+            audience: ['api.myfunapp.com']
+        }
+    });
+
     server.route([
         { method: 'GET', path: '/basic_jwt', handler: defaultHandler, options: { auth: 'jwt_token_type' } },
         { method: 'GET', path: '/jwt_no_keychain', handler: defaultHandler, options: { auth: 'reject_jwt_no_keychain' } },
         { method: 'GET', path: '/jwt_invalid_keychain', handler: defaultHandler, options: { auth: 'jwt_invalid_keychain' } },
         { method: 'GET', path: '/jwt_invalid_format', handler: defaultHandler, options: { auth: 'jwt_invalid_format' } },
         { method: 'GET', path: '/jwt_with_options', handler: defaultHandler, options: { auth: 'jwt_with_options' } },
+        { method: 'GET', path: '/jwt_with_token_type', handler: defaultHandler, options: { auth: 'jwt_with_token_type' } },
         { method: 'POST', path: '/basic', handler: defaultHandler, options: { auth: 'default' } },
         { method: 'POST', path: '/basic_default_auth', handler: defaultHandler, options: { } },
         { method: 'GET', path: '/basic_named_token', handler: defaultHandler, options: { auth: 'default_named_access_token' } },
@@ -605,6 +616,15 @@ it('returns 200 if jwt token is supplied', async () => {
 it('returns 200 if jwt token is supplied with options', async () => {
 
     const request = { method: 'GET', url: '/jwt_with_options', headers: { authorization: `Bearer ${jwtAud}` } };
+
+    const res = await server.inject(request);
+
+    expect(res.statusCode).to.equal(200);
+});
+
+it('returns 200 if jwt token is supplied with options', async () => {
+
+    const request = { method: 'GET', url: '/jwt_with_token_type', headers: { authorization: `JWT ${jwtAud}` } };
 
     const res = await server.inject(request);
 
