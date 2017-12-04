@@ -17,7 +17,11 @@ You can add the plugin to you project using npm or yarn:
 This plugin creates a `hapi-now-auth` [authentication scheme](https://hapijs.com/api#authentication-scheme) with the following options:  
 - `validate` - **(required)** your validation function with `[async] function(request, token, h)` where:
   - `request` is the [hapi request object](https://hapijs.com/api#request)
-  - `token` the auth token received from the client
+  - `token` 
+    - `if (verifyJWT === false)`
+      - the auth token received from the client
+    - `if (verifyJWT === true)`
+      - object `{ decodedJWT, token }`
   - `h` the [hapi response toolkit](https://hapijs.com/api#response-toolkit)
   - **Response**
     - `{ isValid, credentials, artifacts }` where:
@@ -32,7 +36,7 @@ This plugin creates a `hapi-now-auth` [authentication scheme](https://hapijs.com
   - `tokenType` - (*Default: `Bearer`, Type: string*) - accept a custom token type e.g., Authorization JWT \<token\>
   - `allowChaining` - (*Default: `false`, Type: `boolean`*) - permit additional authentication strategies
   - `unauthorized` - (*Default: [Boom.unauthorized](https://github.com/hapijs/boom#boomunauthorizedmessage-scheme-attributes), Type: `function`*) - e.g., `function(message, scheme, attributes)`
-  - `verifyJWT` - (*Default: `false`, Type: `boolean`*) - verify and decode JWT
+  - `verifyJWT` - (*Default: `false`, Type: `boolean`*) - verify and decode JWT (*note:* `validate` function will need to accept object of `{ decodedJWT, token }`)
   - `keychain` - (**Required** if verifyJWT: `True`, Type: `array[string]`) - an array of your secret keys
   - `verifyOptions` - (*Optional, Type: `object`*)
     - `algorithms` - (*Default: `['HS256']`, Type: `array`)
