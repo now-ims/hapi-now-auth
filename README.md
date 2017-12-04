@@ -10,8 +10,8 @@ This authentication package was inspired by [hapi-auth-bearer-token](https://git
 
 ## Install
 You can add the plugin to you project using npm or yarn:  
-**npm:**```npm i hapi-now-auth```  
-**yarn:**```yarn add hapi-now-auth```  
+**npm:**```npm i @now-ims/hapi-now-auth```  
+**yarn:**```yarn add @now-ims/hapi-now-auth```  
 
 ## Hapi Now Auth Scheme  
 This plugin creates a `hapi-now-auth` [authentication scheme](https://hapijs.com/api#authentication-scheme) with the following options:  
