@@ -8,7 +8,7 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "lab -a code -t 100 -L",
+    "test": "lab -a code -t 100 -L -r lcov | ./node_modules/.bin/coveralls",
     "test-cover": "lab -a code -r html -o coverage.html"
   },
   "keywords": [
@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "code": "^5.1.2",
+    "coveralls": "^3.0.0",
     "hapi": "^17.1.1",
     "lab": "^15.1.2"
   },
