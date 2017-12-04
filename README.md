@@ -52,7 +52,7 @@ This plugin creates a `hapi-now-auth` [authentication scheme](https://hapijs.com
 ## Working example  
 ```
 const Hapi = require('hapi');
-const HapiNowAuth = require('hapi-now-auth');
+const HapiNowAuth = require('@now-ims/hapi-now-auth');
 
 // create your hapi server
 const server = Hapi.server({ port: 8000 });
@@ -69,18 +69,32 @@ async function start() {
         process.exit(1);
     }
 
-    server.auth.strategy('my-strategy', 'hapi-now-auth', {
+    server.auth.strategy('jwt-strategy', 'hapi-now-auth', {
         verifyJWT: true,
         keychain: [process.env.SECRET_KEY],
         validate: async (request, token, h) => {
+
             let isValid, artifacts;
 
-            const credentials = { token };
+            /** 
+             * we asked the plugin to verify the JWT
+             * we will get back the decodedJWT as token.decodedJWT 
+             * and we will get the JWT as token.token
+             */
+
+            const credentials = token.decodedJWT;
+
+            /** 
+             * return the decodedJWT to take advantage of hapi's
+             * route authentication options
+             * https://hapijs.com/api#authentication-options
+             */
             
             /**
              * Validate your token here
              * For example, compare to your redis store
              */
+
              redis.get(token, (error, result) => {
                  if (error) {
                      isValid = false;
@@ -94,7 +108,7 @@ async function start() {
         }
     });
 
-    server.auth.default('my-strategy');
+    server.auth.default('jwt-strategy');
 
     server.route({
         method: 'GET',
@@ -102,8 +116,34 @@ async function start() {
         handler: async (request, h) => {
 
             return { info: 'success!' }
+        },
+        options: {
+            auth: false
         }
     });
+
+    server.route({
+        method: 'GET',
+        path: '/protected',
+        handler: async (request, h) => {
+
+            return { info: 'success if JWT is verified!' }
+        }
+    });
+
+    server.route({
+        method: 'GET',
+        path: '/admin',
+        handler: async (request, h) => {
+
+            return { info: 'success if JWT is verified and scope includes admin' }
+        },
+        options: {
+            auth: {
+                scope: 'admin'
+            }
+        }
+    })
 
     try {
         await server.start();
@@ -120,4 +160,4 @@ async function start() {
 // Don't worry be hapi
 start();
 ```
-License MIT
+License MIT 2017
