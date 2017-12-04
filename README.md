@@ -1,4 +1,4 @@
-### hapi authentication plugin
+## hapi authentication plugin
 
 [![Build Status](https://travis-ci.org/puchesjr/hapi-now-auth.svg?branch=master)](https://travis-ci.org/puchesjr/hapi-now-auth)
 
