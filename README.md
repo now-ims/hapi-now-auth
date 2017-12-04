@@ -1,6 +1,7 @@
 ## hapi authentication plugin
 
 [![Build Status](https://travis-ci.org/puchesjr/hapi-now-auth.svg?branch=master)](https://travis-ci.org/puchesjr/hapi-now-auth)
+[![Coverage Status](https://coveralls.io/repos/github/puchesjr/hapi-now-auth/badge.svg?branch=master)](https://coveralls.io/github/puchesjr/hapi-now-auth?branch=master)
 
 **Note:** this plugin is for [hapi](https://hapijs.com) v17+ 
 
