@@ -50,8 +50,9 @@ This plugin creates a `hapi-now-auth` [authentication scheme](https://hapijs.com
     - `maxAge` - (*Optional, Type: `string`*) - maximum allowed age for tokens to still be valid - e.g., `2 days`, `1 hour`, `15m`
     - `clockTimestamp` - the time in seconds that should be used as current time for all necessary comparisons
 
-## Working example  
-```
+## Working example
+
+```js
 const Hapi = require('hapi');
 const HapiNowAuth = require('@now-ims/hapi-now-auth');
 
