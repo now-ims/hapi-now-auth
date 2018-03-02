@@ -4,7 +4,7 @@
   "description": "Simple hapi v17+ authentication scheme including JWT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/puchesjr/hapi-now-auth.git"
+    "url": "git://github.com/now-ims/hapi-now-auth"
   },
   "main": "lib/index.js",
   "scripts": {
@@ -36,7 +36,7 @@
     "lab": "^15.1.2"
   },
   "bugs": {
-    "url": "https://github.com/puchesjr/hapi-now-auth/issues"
+    "url": "https://github.com/now-ims/hapi-now-auth/issues"
   },
-  "homepage": "https://github.com/puchesjr/hapi-now-auth"
+  "homepage": "https://github.com/now-ims/hapi-now-auth"
 }
