@@ -395,9 +395,9 @@ it('returns a 401 on default auth with access_token query param renamed and set'
 });
 
 
-it('doesn\'t affect header auth and will return 200 and success when specifying custom access_token name', async () => {
+it('affect header auth and will return 200 and success when specifying custom access_token name', async () => {
 
-    const requestQueryToken = { method: 'GET', url: '/basic_named_token', headers: { authorization: 'Bearer 12345678' } };
+    const requestQueryToken = { method: 'GET', url: '/basic_named_token', headers: { my_access_token: 'Bearer 12345678' } };
     const res = await server.inject(requestQueryToken);
 
     expect(res.statusCode).to.equal(200);
@@ -407,7 +407,7 @@ it('doesn\'t affect header auth and will return 200 and success when specifying 
 
 it('allows you to enable auth by query token', async () => {
 
-    const requestQueryToken = { method: 'GET', url: '/query_token_enabled?access_token=12345678' };
+    const requestQueryToken = { method: 'GET', url: '/query_token_enabled?authorization=12345678' };
     const res = await server.inject(requestQueryToken);
 
     expect(res.statusCode).to.equal(200);
@@ -425,7 +425,7 @@ it('allows you to enable auth by query token and rename the query param', async 
 
 it('allows you to enable auth by query token and still use header', async () => {
 
-    const requestQueryToken = { method: 'GET', url: '/query_token_enabled_renamed', headers: { authorization: 'Bearer 12345678' } };
+    const requestQueryToken = { method: 'GET', url: '/query_token_enabled_renamed', headers: { my_access_token: 'Bearer 12345678' } };
     const res = await server.inject(requestQueryToken);
 
     expect(res.statusCode).to.equal(200);
@@ -528,7 +528,7 @@ it('does not allow an auth cookie by default', async () => {
 
 it('allows you to enable auth by cookie token', async () => {
 
-    const cookie = 'access_token=12345678';
+    const cookie = 'authorization=12345678';
     const requestCookieToken = { method: 'GET', url: '/cookie_token_enabled', headers: { cookie }  };
     const res = await server.inject(requestCookieToken);
 
