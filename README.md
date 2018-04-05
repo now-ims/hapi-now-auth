@@ -30,7 +30,7 @@ This plugin creates a `hapi-now-auth` [authentication scheme](https://hapijs.com
       - `credentials` an object passed back to your application in `request.auth.credentials`
       - `artifacts` optional related data
 - `options` (*Optional*)
-  - `accessTokenName` - (*Default: `'access_token'`, Type: `string`*) 
+  - `accessTokenName` - (*Default: `'authorization'`, Type: `string`*) 
   - `allowQueryToken` - (*Default: `false`, Type: `boolean`*)
   - `allowCookieToken` - (*Default: `false`, Type: `boolean`*)
   - `allowMultipleHeaders` - (*Default: `false`, Type: `boolean`*) - accept multiple headers, e.g., Authorization Bearer \<token\>; Authorization JWT \<token\>
