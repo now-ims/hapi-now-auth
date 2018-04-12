@@ -1,6 +1,6 @@
 {
   "name": "@now-ims/hapi-now-auth",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simple hapi v17+ authentication scheme including JWT",
   "repository": {
     "type": "git",
