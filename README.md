@@ -162,4 +162,8 @@ async function start() {
 // Don't worry be hapi
 start();
 ```
-License MIT 2017
+
+## Acknowledgement
+This project is kindly sponsored by [Now IMS](https://nowims.com)
+
+Licensed under [MIT](./LICENSE)
