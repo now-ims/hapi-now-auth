@@ -35,9 +35,9 @@
   },
   "devDependencies": {
     "code": "^5.2.0",
-    "coveralls": "^3.0.0",
-    "hapi": "^17.4.0",
-    "lab": "^15.4.1",
+    "coveralls": "^3.0.2",
+    "hapi": "^17.5.3",
+    "lab": "^15.5.0",
     "nsp": "^3.2.1"
   },
   "bugs": {
