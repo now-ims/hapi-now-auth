@@ -37,8 +37,7 @@
     "code": "^5.2.0",
     "coveralls": "^3.0.2",
     "hapi": "^17.5.3",
-    "lab": "^15.5.0",
-    "nsp": "^3.2.1"
+    "lab": "^15.5.0"
   },
   "bugs": {
     "url": "https://github.com/now-ims/hapi-now-auth/issues"
