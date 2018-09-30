@@ -4,3 +4,4 @@ coverage.html
 npm-debug.log
 .vscode
 .idea
+yarn-error.log
