@@ -10,7 +10,7 @@
   "scripts": {
     "test": "lab -a code -t 100 -L -r lcov | ./node_modules/.bin/coveralls",
     "test-cover": "lab -a code -r html -o coverage.html",
-    "security": "nsp check --summary",
+    "security": "npm audit",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
     "publish:major": "npm version major && npm publish"
@@ -37,8 +37,7 @@
     "code": "^5.2.0",
     "coveralls": "^3.0.2",
     "hapi": "^17.5.3",
-    "lab": "^15.5.0",
-    "nsp": "^3.2.1"
+    "lab": "^15.5.0"
   },
   "bugs": {
     "url": "https://github.com/now-ims/hapi-now-auth/issues"
