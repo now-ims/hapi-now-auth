@@ -1,9 +1,8 @@
 language: node_js
 
 node_js:
-  - "8"
-  - "9"
-  - "node"
-  - "lts/*"
+  - '10'
+  - 'node'
+  - 'lts/*'
 
 sudo: false
