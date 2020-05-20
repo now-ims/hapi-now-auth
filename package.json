@@ -26,7 +26,7 @@
   "author": "John Rodkey <jrodkeyjr@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=10.15.1"
   },
   "dependencies": {
     "@hapi/boom": "^7.4.11",
