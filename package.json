@@ -30,8 +30,8 @@
   },
   "dependencies": {
     "@hapi/boom": "^7.4.11",
-    "@hapi/hoek": "^9.0.2",
-    "joi": "^17.4.0",
+    "@hapi/hoek": "^9.2.0",
+    "joi": "^17.4.2",
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
