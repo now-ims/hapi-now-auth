@@ -1,4 +1,4 @@
-name: Hapi Now Auth Test Runner
+name: @now-ims/hapi-now-auth
 on:
   push:
     branches:
