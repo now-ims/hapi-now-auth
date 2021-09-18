@@ -15,10 +15,10 @@ jobs:
       matrix:
         node: ['12', '14', '16']
     name: Now-IMS Hapi-Now-Auth using Node v${{matrix.node}}
-  steps:
-  - uses: actions/checkout@v2
-  - uses: actions/setup-node@v2
-    with:
-      node-version: ${{matrix.node}}
-  - run: npm install
-  - run: npm test
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: ${{matrix.node}}
+    - run: npm install
+    - run: npm test
