@@ -8,7 +8,7 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "lab -a @hapi/code -t 100 -L -r lcov | ./node_modules/.bin/coveralls",
+    "test": "lab -a @hapi/code -t 100 -L",
     "test-cover": "lab -a @hapi/code -r html -o coverage.html",
     "security": "npm audit",
     "publish:patch": "npm version patch && npm publish",
@@ -37,8 +37,7 @@
   "devDependencies": {
     "@hapi/code": "^8.0.1",
     "@hapi/hapi": "^18.4.0",
-    "@hapi/lab": "^22.0.3",
-    "coveralls": "^3.0.9"
+    "@hapi/lab": "^22.0.3"
   },
   "bugs": {
     "url": "https://github.com/now-ims/hapi-now-auth/issues"
