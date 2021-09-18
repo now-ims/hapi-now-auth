@@ -1,16 +1,24 @@
 name: Hapi Now Auth Test Runner
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - next
+  pull_request:
+    branches:
+      - main
+      - next
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node: ['12', '14', '16']
+    name: Now-IMS Hapi-Now-Auth using Node v${{matrix.node}}
   steps:
-    - uses: actions/checkout@v2
-    - name: Node ${{matrix.node}} test
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{matrix.node}}
-    - run: npm install
-    - run: npm test
+  - uses: actions/checkout@v2
+  - uses: actions/setup-node@v2
+    with:
+      node-version: ${{matrix.node}}
+  - run: npm install
+  - run: npm test
