@@ -1,4 +1,4 @@
-name: @now-ims/hapi-now-auth
+name: "@now-ims/hapi-now-auth"
 on:
   push:
     branches:
