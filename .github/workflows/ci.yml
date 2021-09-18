@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: ['12', '14', 'lts']
+        node: ['12', '14']
     name: Now-IMS Hapi-Now-Auth using Node v${{matrix.node}}
     steps:
     - uses: actions/checkout@v2
