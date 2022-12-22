@@ -32,7 +32,7 @@
     "@hapi/boom": "^7.4.11",
     "@hapi/hoek": "^9.2.0",
     "joi": "^17.4.2",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^9.0.0"
   },
   "devDependencies": {
     "@hapi/code": "^8.0.1",
